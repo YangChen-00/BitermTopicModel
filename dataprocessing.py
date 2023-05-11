@@ -90,7 +90,7 @@ def preprocessing_txt(data):
 if __name__ == "__main__":
     download('stopwords')
     filename = 'dataset_clean_english_only_new.txt'
-    datapath = '/home/ychen/Projects/BitermTopicModel/data/' + filename
+    datapath = './data/' + filename
     suffix = filename.split('.')[1]
 
     data = load_data(datapath, suffix)
@@ -100,13 +100,9 @@ if __name__ == "__main__":
     elif suffix == 'txt':
         data, doc = preprocessing_txt(data)
     
-    # with open('data_new.txt', 'w') as fd:
-    #     fd.writelines(data)
-        # pickle.dump(data, fd)
-    with open(datapath + 'after_preprocess_dataset_clean_english_only_new.txt', 'w') as fd:
+    with open(datapath + 'after_preprocess_' + filename, 'w') as fd:
         for d in doc:
             res = ""
             for w in d:
                 res += w + " "
             fd.write(res + '\n')
-        # pickle.dump(doc, fd)
