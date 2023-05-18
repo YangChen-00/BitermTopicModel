@@ -9,6 +9,7 @@ The reason why BitermTopicModel is used is that Twitter data is usually some sho
 ## Table of Contents
 
 - [Installation](#installation)
+- [Folder Structure](#folderstructure)
 - [Usage](#usage)
 
 ## Installation
@@ -19,11 +20,12 @@ pip install biterm
 ```
 
 **Step 1.** Modify the code in the package
+ 
 You should replace the `btm.py` and `utility.py` in the BTM package with the two files we provided in `replace_file`
 
 Then you have completed the installation steps
 
-## Folder Structure
+## FolderStructure
 ```
 BitermTopicModel-ChatGPT/
 │

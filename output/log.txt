@@ -1,0 +1,9 @@
+1. remove 'chatgpt', 'ai', 'gpt4', 'gpt'
+topic_coherence_result_2023-05-12-16-16-44_1iter.txt
+
+2. remove 'chatgpt', 'ai', 'gpt4', 'gpt', 'work', 'job' but not all
+topic_coherence_result_2023-05-13-22-30-27_1iter.txt
+topic_coherence_result_2023-05-15-09-50-03_5iter.txt
+
+3. remove 'chatgpt', 'ai', 'gpt4', 'gpt', 'work', 'job' all
+topic_coherence_result_2023-05-17-15-33-14_1iter.txt

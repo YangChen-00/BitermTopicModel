@@ -5,6 +5,7 @@ import numpy as np
 from xml.dom.minidom import Document
 #　tweet-preprocessor
 import preprocessor.api as p
+import time
 # https://towardsdatascience.com/basic-tweet-prconda install -c saidozcan tweet-preprocessoreprocessing-in-python-efd8360d529e
 
 from nltk import download
@@ -24,6 +25,7 @@ stop_words = stopwords.words('english')
 porter = PorterStemmer()
 lemmatizer = WordNetLemmatizer()
 
+opt_words = ['chatgpt', 'ai', 'gpt4', 'gpt', 'work', 'job']
 
 def load_data(datapath, suffix):
     if suffix == 'json':
@@ -52,6 +54,8 @@ def preprocessing_json(data):
         d['pt'] = [porter.stem(word) for word in d['pt']]
         # Lemmatize
         d['pt'] = [lemmatizer.lemmatize(word) for word in d['pt']]
+        # Remove opt words
+        d = [word for word in d if word not in opt_words]
         document.append(d['pt'])
 
     return data, document
@@ -76,6 +80,8 @@ def preprocessing_txt(data):
         d = [porter.stem(word) for word in d]
         # Lemmatize
         d = [lemmatizer.lemmatize(word) for word in d]
+        # Remove opt words
+        d = [word for word in d if word not in opt_words]
         if len(d) == 0:
             print('wrong')
         else:
@@ -93,6 +99,9 @@ if __name__ == "__main__":
     datapath = './data/' + filename
     suffix = filename.split('.')[1]
 
+    timestamp = "{}".format(str(time.strftime("%Y-%m-%d-%H-%M-%S",time.localtime())))
+    prefix =  timestamp
+    
     data = load_data(datapath, suffix)
 
     if suffix == 'json':
@@ -100,7 +109,8 @@ if __name__ == "__main__":
     elif suffix == 'txt':
         data, doc = preprocessing_txt(data)
     
-    with open(datapath + 'after_preprocess_' + filename, 'w') as fd:
+    save_path = './data/' + '{}_after_preprocess_{}'.format(prefix, filename)
+    with open(save_path, 'w') as fd:
         for d in doc:
             res = ""
             for w in d:

@@ -14,19 +14,23 @@ def __num_dist_rows__(array, ndigits=2):
 
 if __name__ == "__main__":
     timestamp = "{}".format(str(time.strftime("%Y-%m-%d-%H-%M-%S",time.localtime())))
-    iteration_num = 1
+    iteration_num = 5
     postfix = '_' + timestamp + '_' + str(iteration_num) + 'iter'
     
-    texts = open('./data/after_preprocess_dataset_clean_english_only_new.txt').read().splitlines() # path of data file
+    print("Read texts from file ...")
+    texts = open('./data/2023-05-17-15-30-06_after_preprocess_dataset_clean_english_only_new.txt').read().splitlines() # path of data file
 
     # vectorize texts
+    print("Vectorize texts ...")
     vec = CountVectorizer(stop_words='english')
     X = vec.fit_transform(texts).toarray()
 
     # get vocabulary
+    print("Get vocabulary ...")
     vocab = np.array(vec.get_feature_names())
 
     # get biterms
+    print("Get biterms ...")
     biterms = vec_to_biterms(X)
     
     # # create btm
