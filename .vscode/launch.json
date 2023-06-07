@@ -8,16 +8,28 @@
             "name": "BTM",
             "type": "python",
             "request": "launch",
-            "program": "btm_20230410.py",
+            "program": "btm_train.py",
             "console": "integratedTerminal",
             "justMyCode": false,
-            "cwd": "/home/dx/projects/BitermTopicModel/"
+            "cwd": "/home/dx/ychen-projects/BitermTopicModel-ChatGPT",
+            "args": ["--iteration_num", "1", 
+                "--topics_num", "20",
+                "--resume_path", "models/btm_model_2023-05-17-15-36-44_5iter.pkl",]
         },
         {
             "name": "preprocess",
             "type": "python",
             "request": "launch",
             "program": "dataprocessing.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "cwd": "/home/dx/ychen-projects/BitermTopicModel-ChatGPT"
+        },
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": false,
             "cwd": "/home/dx/ychen-projects/BitermTopicModel-ChatGPT"

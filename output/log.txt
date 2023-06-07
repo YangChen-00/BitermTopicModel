@@ -1,3 +1,8 @@
+the number of topics: 20
+0. not remove opt words
+topic_coherence_result_2023-04-22-13-40-46_1iter.txt
+topic_coherence_result_2023-04-22-13-58-46_5iter.txt
+
 1. remove 'chatgpt', 'ai', 'gpt4', 'gpt'
 topic_coherence_result_2023-05-12-16-16-44_1iter.txt
 
@@ -7,3 +12,5 @@ topic_coherence_result_2023-05-15-09-50-03_5iter.txt
 
 3. remove 'chatgpt', 'ai', 'gpt4', 'gpt', 'work', 'job' all
 topic_coherence_result_2023-05-17-15-33-14_1iter.txt
+topic_coherence_result_2023-05-17-15-36-44_5iter.txt
+topic_coherence_result_2023-05-22-13-42-11_10iter.txt
