@@ -14,3 +14,6 @@ topic_coherence_result_2023-05-15-09-50-03_5iter.txt
 topic_coherence_result_2023-05-17-15-33-14_1iter.txt
 topic_coherence_result_2023-05-17-15-36-44_5iter.txt
 topic_coherence_result_2023-05-22-13-42-11_10iter.txt
+
+4. topics number is 24
+topic_coherence_result_2023-06-13-20-46-08_5iter_24t.txt

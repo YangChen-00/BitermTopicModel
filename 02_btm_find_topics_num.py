@@ -197,6 +197,6 @@ if __name__ == "__main__":
     train_biterms, valid_biterms, corpus_vocab = partition_data(data_path, 0.8)
     
     find_topics_num(train_biterms, valid_biterms, corpus_vocab,
-                    {'from': 13, 'to': 20, 'by': 1}, 
+                    {'from': 26, 'to': 30, 'by': 1}, 
                     1, 
                     ['perplexity', 'CaoJuan2009', 'Deveaud2014'])

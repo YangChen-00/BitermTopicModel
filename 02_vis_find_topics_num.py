@@ -19,17 +19,20 @@ def read_scores_to_list(find_topics_num_log_path):
     return perplexity_list, CaoJuan2009_list, Deveaud2014_list
 
 def vis(vis_path, score_name, score_list):
+    begin=2
+    end=25
     plt.subplots(figsize=(12, 10))
     fontsize=15
 
-    plt.plot(np.arange(2, 21), score_list, linewidth=5,
+    score_list = score_list[:end-begin+1]
+    plt.plot(np.arange(begin, end+1), score_list, linewidth=5,
              marker='o', markersize='7', markeredgewidth=10)
 
     plt.xlabel("Number of Topics")
-    plt.xticks(np.arange(2, 21, 1))
+    plt.xticks(np.arange(2, end+1, 1))
     
     # set vertical dashed line
-    plt.vlines(np.arange(2, 21, 1), 
+    plt.vlines(np.arange(2, end+1, 1), 
                np.min(score_list), np.max(score_list), 
                linestyles='dashed', colors='gray')
 
